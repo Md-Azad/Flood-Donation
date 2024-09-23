@@ -38,7 +38,9 @@
               tabindex="0"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <a class="bg-[#B4F461] font-bold px-4 py-1 rounded-md" href="#"
+              <a
+                class="bg-[#B4F461] font-bold px-4 py-1 rounded-md"
+                href="./blog.html"
                 >Blog</a
               >
             </ul>
@@ -46,7 +48,7 @@
 
           <a
             class="hidden bg-[#B4F461] font-bold px-4 py-1 rounded-md md:inline-block"
-            href="#"
+            href="./blog.html"
             >Blog</a
           >
         </div>
@@ -63,13 +65,29 @@
     <main>
       <!-- Donation and History buttons -->
       <div class="text-center mt-12 space-x-3">
-        <button class="bg-[#B4F461] px-6 py-2 rounded-md border">
+        <button
+          id="btn-donation"
+          class="bg-[#B4F461] px-6 py-2 rounded-md border"
+        >
           Donation
         </button>
-        <button class="px-6 py-2 rounded-md border-2 border-gray-400">
+        <button
+          id="btn-history"
+          class="px-6 py-2 rounded-md border-2 border-gray-400"
+        >
           History
         </button>
       </div>
+
+      <!-- contant section -->
+      <div id="donation-contant">
+        <img src="./assets/feni.png" alt="" />
+      </div>
+      <div id="history-contant" class="hidden">
+        <h1>History</h1>
+      </div>
     </main>
+
+    <script src="./js/index.js"></script>
   </body>
 </html>
