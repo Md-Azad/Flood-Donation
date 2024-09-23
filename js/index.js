@@ -10,3 +10,17 @@ document.getElementById("btn-history").addEventListener("click", function () {
   document.getElementById("btn-donation").classList.remove("bg-[#B4F461]");
   document.getElementById("btn-history").classList.add("bg-[#B4F461]");
 });
+
+const cards = document.querySelectorAll(".donation-contant");
+
+cards.forEach((card) => {
+  const eventCurrentAmount = card.querySelector(".event-donation");
+  const userInputValue = card.querySelector(".input-value");
+  const btnDonate = card.querySelector(".btn-donate");
+
+  btnDonate.addEventListener("click", function () {
+    const donation = validateUserInput(userInputValue.value);
+    const mainBalance = balance();
+    updateEventDonationAmount(mainBalance, donation, eventCurrentAmount);
+  });
+});
