@@ -4,6 +4,11 @@ function balance() {
   return convertedBalance;
 }
 
+function currentTime() {
+  const date = new Date();
+  return date;
+}
+
 function validateUserInput(amount) {
   //   if (isNaN(amount)) {
   //     alert("please Provide a valid amount");
@@ -35,4 +40,16 @@ function updateEventDonationAmount(mainBalance, donation, currentBalance) {
     const remainingBalance = mainBalance - donation;
     updateMainBalance(remainingBalance);
   }
+}
+
+function updateHistory(donation, title) {
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("px-12", "py-2", "border-2", "rounded-lg", "mb-4");
+  newDiv.innerHTML = `
+    <h1 class="text-xl font-bold">${donation} Taka is ${title.innerText}</h1> 
+    <p>${currentTime()}</p>
+  
+  `;
+
+  document.getElementById("history-contant").appendChild(newDiv);
 }

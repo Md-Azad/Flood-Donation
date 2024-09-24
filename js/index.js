@@ -31,6 +31,7 @@ cards.forEach((card) => {
   const eventCurrentAmount = card.querySelector(".event-donation");
   const userInputValue = card.querySelector(".input-value");
   const btnDonate = card.querySelector(".btn-donate");
+  const title = card.querySelector(".title");
 
   btnDonate.addEventListener("click", function () {
     if (userInputValue.value.trim() === "") {
@@ -52,6 +53,7 @@ cards.forEach((card) => {
     }
     const mainBalance = balance();
     updateEventDonationAmount(mainBalance, makeNumber, eventCurrentAmount);
+    updateHistory(makeNumber, title);
     userInputValue.value = "";
   });
 });
