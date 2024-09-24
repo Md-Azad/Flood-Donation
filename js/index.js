@@ -1,3 +1,4 @@
+// Toggoling between donation and history
 document.getElementById("btn-donation").addEventListener("click", function () {
   document.getElementById("donation-section").classList.remove("hidden");
   document.getElementById("history-contant").classList.add("hidden");
@@ -11,8 +12,9 @@ document.getElementById("btn-history").addEventListener("click", function () {
   document.getElementById("btn-history").classList.add("bg-[#B4F461]");
 });
 
-const header = document.getElementById("header");
+// blur during scroll
 
+const header = document.getElementById("header");
 window.addEventListener("scroll", function () {
   if (window.scrollY > 70) {
     header.style.backgroundColor = "#7c96eb";
@@ -24,6 +26,8 @@ window.addEventListener("scroll", function () {
     header.classList.remove("shadow-lg");
   }
 });
+
+// donation cards
 
 const cards = document.querySelectorAll(".donation-contant");
 
@@ -57,6 +61,8 @@ cards.forEach((card) => {
     userInputValue.value = "";
   });
 });
+
+// Modal
 
 document.getElementById("modal-close").addEventListener("click", function () {
   document.getElementById("modal").classList.add("hidden");
