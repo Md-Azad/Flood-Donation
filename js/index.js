@@ -14,7 +14,7 @@ document.getElementById("btn-history").addEventListener("click", function () {
 const header = document.getElementById("header");
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 50) {
+  if (window.scrollY > 70) {
     header.style.backgroundColor = "#7c96eb";
     header.style.opacity = "0.8";
     header.classList.add("shadow-lg");
@@ -33,8 +33,22 @@ cards.forEach((card) => {
   const btnDonate = card.querySelector(".btn-donate");
 
   btnDonate.addEventListener("click", function () {
+    if (userInputValue.value.trim() === "") {
+      alert("you can not keep input field empty");
+      return;
+    }
+
     const donation = validateUserInput(userInputValue.value);
+    if (isNaN(donation)) {
+      alert("please Provide a valid amount");
+
+      return;
+    }
     const mainBalance = balance();
     updateEventDonationAmount(mainBalance, donation, eventCurrentAmount);
   });
+});
+
+document.getElementById("modal-close").addEventListener("click", function () {
+  document.getElementById("modal").classList.add("hidden");
 });
