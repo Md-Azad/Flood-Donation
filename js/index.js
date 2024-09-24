@@ -38,14 +38,21 @@ cards.forEach((card) => {
       return;
     }
 
-    const donation = validateUserInput(userInputValue.value);
+    const donation = userInputValue.value;
     if (isNaN(donation)) {
       alert("please Provide a valid amount");
 
       return;
     }
+    const makeNumber = parseFloat(donation);
+    if (makeNumber <= 0) {
+      alert("You can not donate this amount money!");
+
+      return;
+    }
     const mainBalance = balance();
-    updateEventDonationAmount(mainBalance, donation, eventCurrentAmount);
+    updateEventDonationAmount(mainBalance, makeNumber, eventCurrentAmount);
+    userInputValue.value = "";
   });
 });
 

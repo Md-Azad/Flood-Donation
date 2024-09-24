@@ -12,11 +12,11 @@ function validateUserInput(amount) {
   //   }
   const convertedAmount = parseFloat(amount);
 
-  if (convertedAmount <= 0) {
-    alert("You can not donate this amount money!");
+  //   if (convertedAmount <= 0) {
+  //     alert("You can not donate this amount money!");
 
-    return 0;
-  }
+  //     return 0;
+  //   }
   return convertedAmount;
 }
 function updateMainBalance(remainingBalance) {
